@@ -1,0 +1,17 @@
+com.apigee.sdk
+com.apigee.sdk.apm.android
+com.apigee.sdk.apm.android.crashlogging
+com.apigee.sdk.apm.android.crashlogging.internal
+com.apigee.sdk.apm.android.metrics
+com.apigee.sdk.apm.android.model
+com.apigee.sdk.apm.android.util
+com.apigee.sdk.apm.http.annotation
+com.apigee.sdk.apm.http.client.cache
+com.apigee.sdk.apm.http.impl.client.cache
+com.apigee.sdk.data.client
+com.apigee.sdk.data.client.callbacks
+com.apigee.sdk.data.client.entities
+com.apigee.sdk.data.client.exception
+com.apigee.sdk.data.client.push
+com.apigee.sdk.data.client.response
+com.apigee.sdk.data.client.utils

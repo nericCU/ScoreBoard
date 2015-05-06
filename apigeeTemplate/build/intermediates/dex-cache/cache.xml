@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Eric\AndroidStudioProjects\apigeeTemplate\app\libs\apigee-android-2.0.14.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="37a7538e7ca4a81a9f7abb9d0a9a2a83d6c79685">
+        <dex dex="C:\Users\Eric\AndroidStudioProjects\apigeeTemplate\app\build\intermediates\pre-dexed\debug\apigee-android-2.0.14-f618d8372dffb8d17528fcec52300c990b6730e6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Eric\AndroidStudioProjects\apigeeTemplate\app\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b9c504522d97f64025c387493d3989e52bc617bd">
+        <dex dex="C:\Users\Eric\AndroidStudioProjects\apigeeTemplate\app\build\intermediates\pre-dexed\debug\android-support-v4-6502b82969fce957dfa959ffa6108f7dcb30a76c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Eric\AndroidStudioProjects\apigeeTemplate\app\libs\apigee-android-2.0.10-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c8fcdf232ea3ad06575d82007ff255431338fe4e">
+        <dex dex="C:\Users\Eric\AndroidStudioProjects\apigeeTemplate\app\build\intermediates\pre-dexed\debug\apigee-android-2.0.10-SNAPSHOT-3803062369b40b93cef62a13917de6be9828b88d.jar" />
+    </item>
+
+</items>

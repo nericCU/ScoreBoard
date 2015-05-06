@@ -1,0 +1,72 @@
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group = 'com.apigee'
+version = '2.0.14'
+
+compileJava.options.encoding = 'UTF-8'
+
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.0.2'
+    }
+}
+
+test {
+    afterTest { desc, result ->
+        println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+    }
+    testLogging {
+        afterSuite { desc, result ->
+            if (!desc.parent) { // will match the outermost suite
+                println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+            }
+        }
+    }
+}
+
+tasks.withType(Test) {
+    include '**/*Test*'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.oauth-client:google-oauth-client:1.18.0-rc'
+    compile 'com.google.http-client:google-http-client-jackson:1.19.0'
+    compile 'org.apache.httpcomponents:httpclient:4.1.2'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.2.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.2.3'
+    testCompile 'junit:junit:4.+'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+shadowJar {
+    classifier = ''
+}
+
+shadowJar {
+    dependencies {
+        include(dependency('com.fasterxml.jackson.core:jackson-core:2.2.3'))
+        include(dependency('com.fasterxml.jackson.core:jackson-annotations:2.2.3'))
+        include(dependency('com.fasterxml.jackson.core:jackson-databind:2.2.3'))
+        include(dependency('com.google.oauth-client:google-oauth-client:1.18.0-rc'))
+        include(dependency('com.google.http-client:google-http-client-jackson:1.19.0'))
+        include(dependency('com.google.http-client:google-http-client:1.19.0'))
+        include(dependency('org.codehaus.jackson:jackson-core-asl:1.9.11'))
+    }
+}
+
+shadowJar {
+    relocate 'com.fasterxml.jackson', 'com.apigee.fasterxml.jackson'
+    relocate 'com.google.api', 'com.apigee.google.api'
+    relocate 'org.codehaus.jackson', 'com.apigee.codehause.jackson'
+}
+
+javadoc {
+    destinationDir = file("../docs/")
+}
